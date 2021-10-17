@@ -1,8 +1,9 @@
-FROM node:latest as node
-RUN mkdir -p /app
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install 
-COPY . /app/
-EXPOSE 4200
-CMD ["npm", "run", "start"]
+FROM komljen/ubuntu
+MAINTAINER Alen Komljen <alen.komljen@live.com>
+
+RUN \
+  apt-get update && \
+  apt-get -y install \
+          apache2 && \
+  rm /var/www/html/index.html && \
+  rm -rf /var/lib/apt/lists/*
