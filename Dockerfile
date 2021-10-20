@@ -6,7 +6,6 @@ RUN \
   apt-get -y install \
           jq \
           nano \
-          htop \
           git \
           curl \
           apache2 && \
